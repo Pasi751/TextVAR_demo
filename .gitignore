@@ -1,0 +1,177 @@
+# ===== .gitignore =====
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+ENV/
+.env/
+*.egg-info/
+dist/
+build/
+*.egg
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =========================
+# Node.js / React
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn
+.pnp.*
+
+# React build
+frontend/build/
+frontend/dist/
+.next/
+out/
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+
+# Keep example file
+!.env.example
+!frontend/.env.example
+!backend/.env.example
+
+# =========================
+# Model Weights (Large Files)
+# Store these on Hugging Face Hub instead
+# =========================
+*.pth
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+*.h5
+*.pkl
+*.onnx
+checkpoints/
+weights/
+models/*.pth
+models/*.pt
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+.classpath
+*.code-workspace
+
+# =========================
+# Operating System
+# =========================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# =========================
+# Logs & Debugging
+# =========================
+*.log
+logs/
+*.out
+*.err
+debug.log
+error.log
+
+# =========================
+# Testing & Coverage
+# =========================
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+nosetests.xml
+
+# =========================
+# Jupyter Notebooks
+# =========================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+profile_default/
+ipython_config.py
+
+# =========================
+# Docker
+# =========================
+.docker/
+
+# =========================
+# Misc
+# =========================
+*.bak
+*.tmp
+*.temp
+*.cache
+.cache/
+tmp/
+temp/
+*.pid
+*.seed
+*.pid.lock
+
+# =========================
+# Hugging Face
+# =========================
+.huggingface/
+
+# =========================
+# Local development
+# =========================
+local/
+scratch/
+experiments/
