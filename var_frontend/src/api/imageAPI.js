@@ -3,7 +3,7 @@
 import axios from "axios";
 
 // Read API URL from environment variable, fallback to localhost for development
-const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const API_BASE_URL = "https://mpm751-textvar-demo-space.hf.space/api";
 
 // Remove trailing slash if present to avoid double slashes in URLs
 const normalizedApiUrl = API_BASE_URL.endsWith('/') 
