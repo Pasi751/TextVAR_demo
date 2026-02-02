@@ -4,6 +4,5 @@ on:
   push:
     branches: [main]
     paths-ignore:
-      - 'backend/**'
-      - 'frontend/**'
-      - '**.md'  # Ignore markdown files
+      - 'var_api/**'
+      - 'var_frontendfrontend/**'
