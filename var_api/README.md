@@ -3,12 +3,23 @@ title: TextVAR demo
 emoji: 🌸
 colorFrom: pink
 colorTo: purple
+sdk: docker
+app_port: 8000
+pinned: false
+license: mit
+---
+
+<!-- ---
+title: TextVAR demo
+emoji: 🌸
+colorFrom: pink
+colorTo: purple
 sdk: gradio
 sdk_version: "4.44.0"
 app_file: app/main.py
 pinned: false
 license: mit
----
+--- -->
 
 # 🌸 TextVAR Demo
 
