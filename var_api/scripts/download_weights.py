@@ -6,7 +6,7 @@ import os
 from huggingface_hub import hf_hub_download
 
 # Configuration
-REPO_ID = "yourusername/var-flowers-model"
+REPO_ID = "mpm751/textvar-demo"
 CHECKPOINT_DIR = os.path.join(os.path.dirname(__file__), "..", "checkpoints")
 
 def download_weights():
