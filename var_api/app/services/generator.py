@@ -1,6 +1,5 @@
 # ===== app/services/generator.py =====
 
-"""Image generation service"""
 
 import io
 import base64
@@ -12,8 +11,8 @@ import torch
 import torch.nn.functional as F
 import open_clip
 
-from ..config import app_config, model_config
-from ..models import VQVAE, VAR
+from app.config import app_config, model_config
+from app.models import VQVAE, VAR
 
 
 class ImageGenerator:
@@ -35,6 +34,10 @@ class ImageGenerator:
         """Load all required models"""
         print(f"Loading models on device: {self.device}")
         
+        # Download weights first
+        print("Downloading weights from HF Hub...")
+        app_config.download_weights()
+        
         # Load VAE
         print("Loading VAE...")
         self.vae = VQVAE(
@@ -45,7 +48,7 @@ class ImageGenerator:
             test_mode=True
         ).to(self.device)
         
-        vae_state = torch.load(app_config.vae_path, map_location='cpu')
+        vae_state = torch.load(app_config.vae_path, map_location='cpu', weights_only=False)
         self.vae.load_state_dict(vae_state, strict=False)
         self.vae.eval()
         print("✓ VAE loaded")
@@ -67,7 +70,7 @@ class ImageGenerator:
             patch_nums=model_config.patch_nums,
         ).to(self.device)
         
-        var_state = torch.load(app_config.model_path, map_location='cpu')
+        var_state = torch.load(app_config.model_path, map_location='cpu', weights_only=False)
         self.var.load_state_dict(var_state['model'])
         self.var.eval()
         print("✓ VAR loaded")
@@ -84,6 +87,7 @@ class ImageGenerator:
         
         self._loaded = True
         print("\n✓ All models loaded successfully!")
+    
     
     @torch.no_grad()
     def encode_text(self, texts: List[str]) -> torch.Tensor:
