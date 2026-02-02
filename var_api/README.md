@@ -4,6 +4,7 @@ emoji: 🌸
 colorFrom: pink
 colorTo: purple
 sdk: docker
+app_file: app/main.py
 app_port: 8000
 pinned: false
 license: mit
