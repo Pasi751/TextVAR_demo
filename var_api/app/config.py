@@ -27,7 +27,7 @@ class ModelConfig:
 class AppConfig:
     """Application configuration"""
     # HF Hub repository for weights
-    hf_repo_id: str = "mpm751/textvar-demo"  # UPDATE THIS
+    hf_repo_id: str = "mpm751/textvar-demo"
     
     # Local cache paths
     cache_dir: Path = field(default_factory=lambda: Path.home() / ".cache" / "var-model")
