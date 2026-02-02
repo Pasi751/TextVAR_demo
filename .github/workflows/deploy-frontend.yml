@@ -13,6 +13,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     
+    defaults:
+      run:
+        working-directory: var_frontend
+    
     steps:
       - uses: actions/checkout@v4
       
@@ -20,15 +24,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: var_frontend/package-lock.json
       
       - name: Install dependencies
-        working-directory: frontend
         run: npm ci
       
       - name: Build
-        working-directory: frontend
         env:
           REACT_APP_API_URL: ${{ secrets.API_URL }}
         run: npm run build
