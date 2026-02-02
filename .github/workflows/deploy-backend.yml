@@ -29,4 +29,4 @@ jobs:
           git config user.name "GitHub Actions"
           git add .
           git commit -m "Deploy from GitHub"
-          git push --force https://user:$HF_TOKEN@huggingface.co/spaces/yourusername/var-flowers main
+          git push --force https://user:$HF_TOKEN@huggingface.co/spaces/mpm751/textvar-demo-space main
