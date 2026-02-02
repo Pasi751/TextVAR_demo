@@ -1,0 +1,9 @@
+# ===== .github/workflows/test.yml =====
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'backend/**'
+      - 'frontend/**'
+      - '**.md'  # Ignore markdown files

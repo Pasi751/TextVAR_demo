@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'backend/**'
+      - 'var_api/**'
       - '.github/workflows/deploy-backend.yml'
 
 jobs:
