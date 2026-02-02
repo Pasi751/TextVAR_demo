@@ -13,7 +13,7 @@ license: mit
 suggested_hardware: t4-small
 ---
 
-# 🌸 VAR Flower Image Generator
+# 🌸 TextVAR Demo
 
 Generate beautiful flower images from text descriptions using the VAR (Visual AutoRegressive) model.
 
