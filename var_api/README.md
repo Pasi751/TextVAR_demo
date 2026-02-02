@@ -1,4 +1,3 @@
-
 ---
 title: TextVAR demo
 emoji: 🌸
@@ -6,6 +5,7 @@ colorFrom: pink
 colorTo: purple
 sdk: gradio
 sdk_version: "4.44.0"
+python_version: "3.10"
 app_file: app/main.py
 pinned: false
 license: mit
