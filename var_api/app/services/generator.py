@@ -1,6 +1,9 @@
 # ===== app/services/generator.py =====
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d8d1c67803e11aa4643cf99bc7f5befa3b940a40
 import io
 import base64
 from typing import List, Optional, Tuple
@@ -87,6 +90,7 @@ class ImageGenerator:
         
         self._loaded = True
         print("\n✓ All models loaded successfully!")
+
     
     
     @torch.no_grad()

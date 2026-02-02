@@ -4,15 +4,27 @@ torchvision>=0.15.0,<0.20.0
 numpy>=1.24.0,<2.0.0
 Pillow>=10.0.0
 
+<<<<<<< HEAD
 # API
 gradio>=4.0.0,<5.0.0
+=======
+# API - Use compatible versions
+gradio==4.19.2
+huggingface-hub==0.20.3
+>>>>>>> d8d1c67803e11aa4643cf99bc7f5befa3b940a40
 fastapi>=0.100.0,<1.0.0
 pydantic>=2.0.0,<3.0.0
 uvicorn>=0.23.0
 
 # Model
 open-clip-torch>=2.20.0
+<<<<<<< HEAD
 huggingface-hub>=0.19.0
 
 # HF Spaces
 spaces
+=======
+
+# HF Spaces
+spaces
+>>>>>>> d8d1c67803e11aa4643cf99bc7f5befa3b940a40
