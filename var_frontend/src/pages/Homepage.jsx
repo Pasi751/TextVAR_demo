@@ -89,7 +89,7 @@ const Homepage = () => {
 
       {/* Heading */}
       <h1 className="text-7xl font-semibold text-white text-center font-poppins">
-        Transform text into <br /> stunning images
+        ransform text into <br /> stunning images
       </h1>
 
       <p className="text-lg text-white/80 text-center mt-8 max-w-8xl font-poppins">
