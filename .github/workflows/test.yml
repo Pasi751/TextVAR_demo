@@ -5,4 +5,4 @@ on:
     branches: [main]
     paths-ignore:
       - 'var_api/**'
-      - 'var_frontendfrontend/**'
+      - 'var_frontend/**'
