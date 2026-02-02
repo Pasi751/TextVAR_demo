@@ -2,8 +2,13 @@
 
 import axios from "axios";
 
-// Update to your VAR API URL
-const API_BASE_URL = process.env.REACT_APP_API_URL;
+// Read API URL from environment variable, fallback to localhost for development
+const API_BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:8000";
+
+// Remove trailing slash if present to avoid double slashes in URLs
+const normalizedApiUrl = API_BASE_URL.endsWith('/') 
+  ? API_BASE_URL.slice(0, -1) 
+  : API_BASE_URL;
 
 /**
  * Generate image from text prompt using VAR model
@@ -20,7 +25,7 @@ export const generateImage = async (prompt, options = {}) => {
   } = options;
 
   const response = await axios.post(
-    `${API_BASE_URL}/generate`,
+    `${normalizedApiUrl}/generate`,
     {
       prompt,
       cfg_scale,
@@ -65,7 +70,7 @@ export const generateBatchImages = async (prompts, options = {}) => {
   } = options;
 
   const response = await axios.post(
-    `${API_BASE_URL}/generate/batch`,
+    `${normalizedApiUrl}/generate/batch`,
     {
       prompts,
       cfg_scale,
@@ -101,7 +106,7 @@ export const generateBatchImages = async (prompts, options = {}) => {
  * @returns {Promise<{status: string, model_loaded: boolean}>}
  */
 export const checkHealth = async () => {
-  const response = await axios.get(`${API_BASE_URL}/health`, {
+  const response = await axios.get(`${normalizedApiUrl}/health`, {
     timeout: 5000,
   });
   return response.data;
