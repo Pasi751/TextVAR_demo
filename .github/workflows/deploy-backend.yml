@@ -23,7 +23,7 @@ jobs:
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          cd backend
+          cd var_api
           git init
           git config user.email "github-actions@github.com"
           git config user.name "GitHub Actions"
