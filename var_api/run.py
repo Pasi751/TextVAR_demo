@@ -1,21 +1,20 @@
 # ===== run.py =====
 
-"""Entry point script to run the API server"""
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import uvicorn
-from app.config import app_config
-
 
 def main():
-    """Run the FastAPI server"""
     uvicorn.run(
         "app.main:app",
-        host=app_config.host,
-        port=app_config.port,
+        host="0.0.0.0",
+        port=7860,
         reload=False,
-        workers=1  # Single worker for GPU
+        workers=1
     )
-
 
 if __name__ == "__main__":
     main()
