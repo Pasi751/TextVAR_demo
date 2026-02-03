@@ -12,7 +12,7 @@ const Homepage = () => {
 
   // Advanced options (optional)
   const [showAdvanced, setShowAdvanced] = useState(false);
-  const [cfgScale, setCfgScale] = useState(1.5);
+  const [cfgScale, setCfgScale] = useState(10);
   const [seed, setSeed] = useState("");
 
   // Flower-specific suggestions (since model is trained on flowers)
