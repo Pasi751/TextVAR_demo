@@ -1,6 +1,8 @@
 # ===== app/models/components.py =====
 
-"""Shared model components for VAE and VAR"""
+"""Shared model components for VAE and VAR
+Reference code from the original VAR repository - https://github.com/FoundationVision/VAR.git
+"""
 
 import math
 import numpy as np

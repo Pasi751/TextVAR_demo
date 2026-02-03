@@ -1,5 +1,9 @@
 # ===== app/models/__init__.py =====
 
+"""
+Reference code from the original VAR repository - https://github.com/FoundationVision/VAR.git
+"""
+
 from .components import (
     DropPath,
     Normalize,

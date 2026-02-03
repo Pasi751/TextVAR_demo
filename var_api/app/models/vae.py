@@ -1,6 +1,7 @@
 # ===== app/models/vae.py =====
 
-"""VQVAE model for VAR"""
+"""VQVAE model for VAR
+Reference code from the original VAR repository - https://github.com/FoundationVision/VAR.git"""
 
 from typing import Tuple
 import numpy as np

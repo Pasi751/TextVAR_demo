@@ -1,6 +1,7 @@
 # ===== app/models/var.py =====
 
-"""VAR (Visual AutoRegressive) model"""
+"""VAR (Visual AutoRegressive) model
+Reference code from the original VAR repository - https://github.com/FoundationVision/VAR.git"""
 
 import math
 from typing import Tuple, Optional
