@@ -89,7 +89,7 @@ const Homepage = () => {
 
       {/* Heading */}
       <h1 className="text-7xl font-semibold text-white text-center font-poppins">
-        ransform text into <br /> stunning images
+        Transform text into <br /> stunning images
       </h1>
 
       <p className="text-lg text-white/80 text-center mt-8 max-w-8xl font-poppins">
@@ -146,7 +146,7 @@ const Homepage = () => {
               <input
                 type="number"
                 value={cfgScale}
-                onChange={(e) => setCfgScale(parseFloat(e.target.value) || 1.5)}
+                onChange={(e) => setCfgScale(parseFloat(e.target.value) || 10)}
                 min="1"
                 max="10"
                 step="0.1"
