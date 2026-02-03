@@ -87,9 +87,9 @@ const Documentation = () => {
             </p>
 
             <div className="bg-[#1F304A] rounded-lg p-4 mt-3 font-inter text-sm mb-3">
-              <pre>'A futuristic city at sunset'</pre>
-              <pre>'A cat sitting on a wooden table, oil painting style'</pre>
-              <pre>'A mountain landscape with snow and pine trees'</pre>
+              <pre>'a beautiful red rose flower'</pre>
+              <pre>'a yellow sunflower with green leaves'</pre>
+              <pre>'a purple orchid flower'</pre>
             </div>
 
             <h3 className="text-lg font-inter mb-1">
@@ -116,22 +116,78 @@ const Documentation = () => {
               4. API Documentation
             </h2>
 
+            {/* Base URL */}
             <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm mb-4">
-              <p className="font-semibold mb-2">POST /api/generate-image</p>
+              <p className="font-semibold mb-2">Base URL</p>
+              <pre className="text-green-400">
+                {`https://mpm751-textvar-demo-space.hf.space/api`}
+              </pre>
+            </div>
+
+            {/* Health Check */}
+            <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm mb-4">
+              <p className="font-semibold mb-2">GET /api/health</p>
+              <p className="text-gray-400 mb-2">Check API status</p>
+              <p className="font-semibold mb-1">Response</p>
               <pre>
                 {`{
-  "prompt": "A fantasy castle on a floating island"
+  "status": "healthy",
+  "model_loaded": true,
+  "device": "cuda"
 }`}
               </pre>
             </div>
 
-            <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm">
-              <p className="font-semibold mb-2">Response</p>
+            {/* Generate Image */}
+            <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm mb-4">
+              <p className="font-semibold mb-2">POST /api/generate</p>
+              <p className="text-gray-400 mb-2">Generate image from text prompt</p>
+              <p className="font-semibold mb-1">Request Body</p>
               <pre>
                 {`{
-  "image": "base64_encoded_image_string",
-  "status": "success"
+  "prompt": "a beautiful red rose flower",
+  "cfg_scale": 10,
+  "top_k": 900,
+  "top_p": 0.96,
+  "seed": 42  // optional, null for random
 }`}
+              </pre>
+            </div>
+
+            <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm mb-4">
+              <p className="font-semibold mb-2">Response (Success)</p>
+              <pre>
+                {`{
+  "success": true,
+  "image_base64": "iVBORw0KGgoAAAANSUhEUgAA...",
+  "prompt": "a beautiful red rose flower",
+  "parameters": {
+    "cfg_scale": 10,
+    "top_k": 900,
+    "top_p": 0.96,
+    "seed": 42
+  }
+}`}
+              </pre>
+            </div>
+
+            <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm mb-4">
+              <p className="font-semibold mb-2">Response (Error)</p>
+              <pre>
+                {`{
+  "success": false,
+  "error": "Error message here"
+}`}
+              </pre>
+            </div>
+
+            {/* Example cURL */}
+            <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm">
+              <p className="font-semibold mb-2">Example (cURL)</p>
+              <pre className="whitespace-pre-wrap break-all">
+                {`curl -X POST https://mpm751-textvar-demo-space.hf.space/api/generate \\
+  -H "Content-Type: application/json" \\
+  -d '{"prompt": "a beautiful red rose flower", "cfg_scale": 10}'`}
               </pre>
             </div>
           </section>
@@ -170,14 +226,14 @@ const Documentation = () => {
             <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm mb-4">
               <p className="font-semibold mb-2">Good Prompt Example</p>
               <pre>
-                'A cyberpunk street at night with neon lights and rain, cinematic lighting'
+                'A yellow sunflower with green leaves'
               </pre>
             </div>
 
             <div className="bg-[#1F304A] rounded-lg p-4 font-inter text-sm mb-4">
               <p className="font-semibold mb-2">Poor Prompt Example</p>
               <pre>
-                'City'
+                'Sunflower'
               </pre>
             </div>
           </section>
@@ -195,7 +251,7 @@ const Documentation = () => {
             </ul>
           </section>
 
-          {/* 8. Security & Usage Considerations*/}        
+          {/* 8. Security & Usage Considerations*/}
           <section className="mb-5">
             <h2 className="font-inter text-xl font-inter font-semibold mb-2">
               8. Security & Usage Considerations
