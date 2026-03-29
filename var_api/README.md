@@ -4,15 +4,9 @@ emoji: 🌸
 colorFrom: pink
 colorTo: purple
 sdk: gradio
-<<<<<<< HEAD
-sdk_version: "4.44.0"
-python_version: "3.10"
-app_file: app/main.py
-=======
 sdk_version: "4.19.2"
 python_version: "3.10"
 app_file: run.py
->>>>>>> d8d1c67803e11aa4643cf99bc7f5befa3b940a40
 pinned: false
 license: mit
 ---
