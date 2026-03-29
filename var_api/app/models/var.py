@@ -1,7 +1,8 @@
-# ===== app/models/var.py =====
+# Implementation based on:
+# Tian et al. (2024). "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction."
 
-"""VAR (Visual AutoRegressive) model
-Reference code from the original VAR repository - https://github.com/FoundationVision/VAR.git"""
+
+# ===== app/models/var.py =====
 
 import math
 from typing import Tuple, Optional

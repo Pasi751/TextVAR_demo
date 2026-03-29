@@ -1,3 +1,6 @@
+# Implementation based on:
+# Tian et al. (2024). "Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction."
+
 # ===== app/models/components.py =====
 
 """Shared model components for VAE and VAR
