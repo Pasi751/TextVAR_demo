@@ -15,14 +15,17 @@ const Homepage = () => {
   const [cfgScale, setCfgScale] = useState(10);
   const [seed, setSeed] = useState("");
 
-  // Flower-specific suggestions (since model is trained on flowers)
+  // Top performing prompts based on CLIP scores
   const suggestions = [
+    // Top flower prompts
     "a beautiful red rose flower",
     "a yellow sunflower with green leaves",
-    "a purple orchid flower",
+    "a pink protea flower",
     "a white daisy flower",
-    "a pink tulip in bloom",
-    "a blue iris flower",
+    // Top bird prompts
+    "a brown wren bird",
+    "a blue grosbeak bird",
+    "a yellow meadowlark bird",
   ];
 
   // Check API health on mount
@@ -112,7 +115,7 @@ const Homepage = () => {
         )}
         
         <p className="text-white text-xs mt-2 text-left mb-2">
-          *This model is trained on flower images. For best results, use flower-related prompts.
+          *This model is trained on flower and bird images. For best results, use flower or bird-related prompts.
         </p>
         
         {/* Input and Button - Stack on mobile, row on larger screens */}
@@ -122,7 +125,7 @@ const Homepage = () => {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Enter your text prompt..."
+            placeholder="Enter your text prompt (e.g., 'a red poppy flower' or 'a blue grosbeak bird')..."
             className="flex-1 bg-[#E9EEF6] text-[#1F304A] px-3 py-3 sm:px-4 sm:py-4 rounded-lg outline-none text-sm sm:text-base"
           />
 
@@ -248,7 +251,7 @@ const Homepage = () => {
 
       {/* Footer */}
       <p className="text-white/40 text-xs mt-6 sm:mt-8 text-center px-4">
-        Powered by TextVAR • Built with VAR, CLIP & VQVAE
+        Powered by VAR Text • Built with VAR, CLIP & VQVAE
       </p>
     </div>
   );
